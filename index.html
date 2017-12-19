@@ -44,7 +44,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-    <script src="js/rbc.js"></script>
+    <script src="js/centralized-rbc-with-labor-simulation.js"></script>
     <script type="text/javascript" src="js/sim-0.26.js"></script>
     <script src="js/numeric-1.2.6.js"></script>
   
@@ -84,7 +84,7 @@
   <div class="row">
     <div class="large-12 columns">
       <h4>Background</h4>
-      <p>This tool simulates a centralized RBC model.  A random variable \(X_t\) that follows an AR(1) process can be written as: 
+      <p>This tool simulates the basic centralized RBC model.: 
         \begin{align}
           C^{-\sigma}_t & = \beta E_t \left[ C_{t+1}^{-\sigma}\left(\alpha A_{t+1} K_{t+1}^{\alpha - 1}L_{t+1}^{1 - \alpha} + 1 - \delta\right)\right], \label{euler}\tag{1}\\
           \phi (1 - L_t )^{-\eta} & = (1-\alpha)C_t^{-\sigma}A_t K_t^{\alpha}L_t^{-\alpha}, \label{labor}\tag{2}\\
@@ -164,7 +164,7 @@
               <input id="rhoA" type="number" step="any" min="0" value="0.9">
             </div>
             <div class="large-4 columns">
-              <label for="sigA">TFP shock standard deviation (<em>&#963;<sub>A</sub></em>)</label>
+              <label for="sigA">TFP shock standard deviation (<em>&#963;<sub>&#949;</sub></em>)</label>
               <input id="sigA" type="number" step="any" min="0" value=".01">
             </div>
 
