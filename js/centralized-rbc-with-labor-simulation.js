@@ -533,7 +533,7 @@ $(document).ready(function () {
                     for (i = 0; i <= periods; i++) {
                         data.push({
                             x: tme[i],
-                            y: round(lProc[i],5),
+                            y: round(yProc[i],5),
                         })
                     }
 
