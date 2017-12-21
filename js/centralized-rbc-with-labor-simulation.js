@@ -668,7 +668,7 @@ function reloadFunction() {
 
 function downloadFunction() {
     
-    if (sessionStorage.getItem('kProc') == null){
+    if (sessionStorage.getItem('k') == null){
         window.alert('Run the simulation first.')
     } else {
         var t = JSON.parse(sessionStorage.getItem('t'));
