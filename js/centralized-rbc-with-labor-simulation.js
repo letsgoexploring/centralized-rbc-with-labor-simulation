@@ -652,7 +652,8 @@ $(document).ready(function () {
                     phi,
                     rhoa,
                     sige,
-                    periods
+                    periods,
+                    stochSim.checked
                 }
             }
         ).done(function(data) {
