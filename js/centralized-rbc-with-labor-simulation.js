@@ -624,37 +624,25 @@ $(document).ready(function () {
 
     $('#ParameterInput').on('submit', function (e) {
         e.preventDefault();
-        var A = parseFloat($('#tfp').val());
-        var alpha = parseFloat($('#alpha').val());
-        var delta = parseFloat($('#delta').val());
-        var beta = parseFloat($('#beta').val());
-        var sigma = parseFloat($('#sigma').val());
-        var eta = parseFloat($('#eta').val());
-        var phi = parseFloat($('#phi').val());
-        var rhoa = parseFloat($('#rhoA').val());
-        var sige = parseFloat($('#sigA').val());
-        var periods = parseInt($('#periods').val());
-        var stochSim = document.getElementById ("stochSim");
-        var random = new Random ();
-        var minForMarkers = 30;
+        var reqData = {
+            A: parseFloat($('#tfp').val()),
+            alpha: parseFloat($('#alpha').val()),
+            delta: parseFloat($('#delta').val()),
+            beta: parseFloat($('#beta').val()),
+            sigma: parseFloat($('#sigma').val()),
+            eta: parseFloat($('#eta').val()),
+            phi: parseFloat($('#phi').val()),
+            rhoa: parseFloat($('#rhoA').val()),
+            sige: parseFloat($('#sigA').val()),
+            periods: parseInt($('#periods').val()),
+            stochSim: $('input[name=simType]:checked').val() == 'stoch' ? 1 : 0
+        }
 
         $.ajax(
             'http://letsgoexploring.techb.us/api/v1/centralized-rbc-with-labor-simulation/',
             {
                 dataType: 'json',
-                data: {
-                    A,
-                    alpha,
-                    delta,
-                    beta,
-                    sigma,
-                    eta,
-                    phi,
-                    rhoa,
-                    sige,
-                    periods,
-                    stochSim.checked
-                }
+                data: reqData
             }
         ).done(function(data) {
             build_charts(data);
